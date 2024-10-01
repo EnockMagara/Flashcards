@@ -1,0 +1,197 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
+
+.App {
+  text-align: center;
+  background-color: #282c34; /* Darker background color */
+  color: #61dafb; /* Brighter text color */
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.start-screen, .quiz-screen, .finish-screen {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #20232a; /* Card background color */
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.flashcard-list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+  margin-bottom: 20px;
+}
+
+.button-group {
+  display: flex;
+  gap: 10px;
+}
+
+.flashcard {
+  width: 300px; /* Default size */
+  height: 200px; /* Default size */
+  border: 2px solid #61dafb;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: transform 0.3s;
+  font-family: 'Courier New', monospace; /* Font family */
+  background-color: #20232a; /* Background color */
+  color: #61dafb; /* Text color */
+  animation: fadeIn 0.5s; /* Animation */
+  margin-bottom: 20px;
+}
+
+.flashcard:hover {
+  transform: scale(1.05);
+}
+
+.flashcard.flipped .flashcard-content {
+  animation: slideIn 0.5s; /* Animation for flipping */
+}
+
+.flashcard-content {
+  font-size: 1.5rem; /* Font size */
+}
+
+.flashcard-content p:first-child {
+  font-size: 1rem; /* Smaller font size for card number */
+  margin-bottom: 10px; /* Margin below card number */
+}
+
+button {
+  padding: 10px 20px;
+  font-size: 1rem;
+  cursor: pointer;
+  background-color: #61dafb;
+  color: #fff; /* Button text color */
+  border: none;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #21a1f1;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+  .App {
+    padding: 20px;
+  }
+
+  button {
+    padding: 8px 16px;
+    font-size: 0.9rem;
+  }
+
+  .flashcard {
+    width: 250px; /* Smaller size for tablets */
+    height: 150px; /* Smaller size for tablets */
+  }
+
+  .flashcard-content {
+    font-size: 1.2rem; /* Smaller font size for tablets */
+  }
+
+  .flashcard-content p:first-child {
+    font-size: 0.9rem; /* Smaller font size for card number on tablets */
+  }
+}
+
+@media (max-width: 480px) {
+  .App {
+    padding: 10px;
+  }
+
+  button {
+    padding: 6px 12px;
+    font-size: 0.8rem;
+  }
+
+  .flashcard {
+    width: 200px; /* Smaller size for mobile */
+    height: 120px; /* Smaller size for mobile */
+  }
+
+  .flashcard-content {
+    font-size: 1rem; /* Smaller font size for mobile */
+  }
+
+  .flashcard-content p:first-child {
+    font-size: 0.8rem; /* Smaller font size for card number on mobile */
+  }
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+  100% { transform: scale(1); }
+}
+
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+@keyframes slideIn {
+  from { transform: translateX(-100%); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
