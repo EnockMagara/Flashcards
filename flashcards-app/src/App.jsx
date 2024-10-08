@@ -48,13 +48,17 @@ function App() {
     setIsFinished(false); // Reset the finished state
   };
 
-  // Function to go back to the start screen
+  // Function to go back to the previous flashcard
   const goBack = () => {
-    if (currentIndex > 0) {
-      setCurrentIndex(currentIndex - 1);
-    } else {
-      setCurrentIndex(flashcards.length - 1);
-    }
+    const prevIndex = currentIndex === 0 ? flashcards.length - 1 : currentIndex - 1;
+    setCurrentIndex(prevIndex);
+    setIsFlipped(false); // Reset the flip state
+  };
+
+  // Function to go to the next flashcard
+  const goNext = () => {
+    const nextIndex = (currentIndex + 1) % flashcards.length;
+    setCurrentIndex(nextIndex);
     setIsFlipped(false); // Reset the flip state
   };
 
@@ -90,8 +94,8 @@ function App() {
             currentIndex={currentIndex} // Pass the current index to FlashcardList
           />
           <div className="button-group">
-            <button onClick={showRandomCard}>Next</button>
             <button onClick={goBack}>Back</button>
+            <button onClick={goNext}>Next</button>
           </div>
         </div>
       )}
